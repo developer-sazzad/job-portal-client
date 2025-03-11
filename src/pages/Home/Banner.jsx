@@ -9,10 +9,10 @@ const Banner = () => {
             <Header></Header>
 
 
-            <div class="container mx-auto items-center overflow-visible">
+            <div class="container mx-auto items-center overflow-visible p-10 lg:p-0">
                 <div class="lg:flex gap-10 justify-center items-center">
                     <div className="flex-1">
-                        <h1 class="text-7xl font-bold">The <motion.span
+                        <h1 class="text-5xl md:text-7xl font-bold">The <motion.span
                             animate={{ color: ['#002bff', '#04ff00', '#ff002b'] }}
                             transition={{ duration: 5, repeat: Infinity }}
                             className="bg-linear-to-t from-[#DFE7FC] px-4"
@@ -36,12 +36,12 @@ const Banner = () => {
                                 animate={{ y: [-50, 50, -50] }}
                                 transition={{ duration: 10, ease: easeInOut, repeat: Infinity }}
                                 src={team1}
-                                class="max-w-md rounded-t-[50px] rounded-br-[50px] border-b-8 border-l-8 border-blue-600 shadow-2xl" />
+                                class="max-w-xs lg:max-w-md rounded-t-[50px] rounded-br-[50px] border-b-8 border-l-8 border-blue-600 shadow-2xl" />
                             <motion.img
                                 animate={{ x: [120, 200, 120] }}
                                 transition={{ duration: 10, delay: 0.5, ease: easeOut, repeat: Infinity }}
                                 src={team2}
-                                class="max-w-md -mt-16 rounded-t-[50px] rounded-br-[50px] border-b-8 border-l-8 border-blue-600 shadow-2xl" />
+                                class="max-w-xs lg:max-w-md -mt-16 rounded-t-[50px] rounded-br-[50px] border-b-8 border-l-8 border-blue-600 shadow-2xl" />
                         </div>
                     </div>
                 </div>
