@@ -1,2 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+.banner-background{
+    background-image: url('/src/assets/bg-banner.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
