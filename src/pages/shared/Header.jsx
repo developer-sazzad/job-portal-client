@@ -6,11 +6,11 @@ const Header = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='auth/register'>Register</NavLink></li>
+        <li><NavLink to='auth/login'>Login</NavLink></li>
     </>
     return (
-        <div className="container mx-auto navbar">
+        <div className="container mx-auto navbar py-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
