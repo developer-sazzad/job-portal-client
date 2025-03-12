@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import Register from "../pages/Authentication/Register";
 import SharedLayout from "../layouts/SharedLayout";
 import Login from "../pages/Authentication/Login";
+import AuthenticationLayout from "../layouts/AuthenticationLayout";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <SharedLayout></SharedLayout>,
         children: [
+            {
+                path: '/',
+                element: <AuthenticationLayout></AuthenticationLayout>
+            },
             {
                 path: 'auth/register',
                 element: <Register></Register>
