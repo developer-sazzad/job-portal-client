@@ -8,7 +8,6 @@ const Banner = () => {
         <div className="banner-background">
             <Header></Header>
 
-
             <div class="container mx-auto items-center overflow-visible p-10 lg:p-0">
                 <div class="lg:flex gap-10 justify-center items-center">
                     <div className="flex-1">

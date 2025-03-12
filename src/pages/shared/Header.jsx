@@ -1,13 +1,25 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/icons/logo-small.png'
+import { useContext } from 'react';
+import AuthContext from '../../providers/AuthContext';
+import Swal from 'sweetalert2';
 
 const Header = () => {
+    const { user, logout } = useContext(AuthContext);
 
+    const handleLogout = () => {
+        logout()
+            .then(() => {
+                Swal.fire({
+                    title: "Logout Successfull!",
+                    icon: "success",
+                    showCancelButton: false
+                });
+            })
+    }
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='auth/register'>Register</NavLink></li>
-        <li><NavLink to='auth/login'>Login</NavLink></li>
     </>
     return (
         <div className="container mx-auto navbar py-5">
@@ -33,7 +45,32 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-neutral">Button</a>
+                {
+                    user && user?.email ? <div className="dropdown dropdown-end">
+                        <div tabIndex={0} role="button" className="btn btn-circle btn-xl avatar">
+                            <div className="w-20 rounded-full">
+                                {
+                                    user && user.email ? <img
+                                        alt=""
+                                        src={user.photoURL} /> : ''
+                                }
+                            </div>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-xl dropdown-content bg-blue-500 rounded-box z-1 mt-3 w-72 p-5 shadow">
+                            <li>
+                                <a className="justify-between">
+                                    Profile
+                                    <span className="badge">New</span>
+                                </a>
+                            </li>
+                            <li><a>Settings</a></li>
+                            <li onClick={handleLogout}><a>Logout</a></li>
+                        </ul>
+                    </div> : <NavLink to='auth/login' className='btn btn-soft btn-primary btn-lg text-xl'>Sign In</NavLink>
+                }
+
             </div>
         </div>
     );

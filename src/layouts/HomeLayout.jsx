@@ -6,7 +6,9 @@ const HomeLayout = () => {
     return (
         <div>
             {/* <Header></Header> */}
-            <Outlet></Outlet>
+            <section className="">
+                <Outlet></Outlet>
+            </section>
             <Footer></Footer>
         </div>
     );
