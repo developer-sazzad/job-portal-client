@@ -48,7 +48,7 @@ const Login = () => {
 
     }
     return (
-        <div className="my-32 lg:flex items-center flex-row-reverse gap-10 space-y-20 justify-between">
+        <div className="lg:flex items-center flex-row-reverse gap-10 space-y-20 justify-between container mx-auto px-10 ">
             <div className='flex-2/5 p-16 rounded-2xl shadow-2xl'>
                 <h2 className='text-3xl font-bold'>Please login your Acoount</h2>
                 <SocialLogin></SocialLogin>

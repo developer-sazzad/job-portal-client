@@ -1,8 +1,14 @@
+// import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const JobsCard = ({ job }) => {
-    const { title, category, jobType, company_logo, description, location, salaryRange, requirements } = job;
+    const { _id, title, category, jobType, company_logo, description, location, salaryRange, requirements } = job;
+
+    // const [jobDetails, setJobDetails] = useState([]);
+
+ 
     return (
-        <div className="card bg-base-100 shadow-2xs border border-gray-200">
+        <div className="card bg-[#EFF2FB] hover:bg-white shadow-2xs border border-gray-200 transition duration-300 transform hover:-translate-y-2">
             <div className="card-body">
                 <div className="flex items-center space-x-4">
                     <img
@@ -32,7 +38,7 @@ const JobsCard = ({ job }) => {
                     <p className="text-xl font-bold text-blue-600">
                         {salaryRange.min}K - {salaryRange.max}K {salaryRange.currency}
                     </p>
-                    <button className="btn btn-soft btn-primary">Apply Now</button>
+                    <Link to={`/jobs/${_id}`} className="btn text-blue-600 bg-[#E0E6F7] hover:bg-black hover:text-white">Apply Now</Link>
                 </div>
             </div>
         </div>

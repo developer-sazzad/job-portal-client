@@ -8,7 +8,7 @@ const SharedLayout = () => {
             <header className="bg-primary text-white">
                 <Header></Header>
             </header>
-            <section className="container mx-auto p-5 md:p-0">
+            <section className="container mx-auto my-32 bg-amber-300 p-5 md:p-0">
                 <Outlet></Outlet>
             </section>
             <Footer></Footer>

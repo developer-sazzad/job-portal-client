@@ -5,9 +5,8 @@ import { easeInOut, easeOut, motion } from "framer-motion"
 
 const Banner = () => {
     return (
-        <div className="banner-background">
+        <div className="banner-background py-20">
             <Header></Header>
-
             <div class="container mx-auto items-center overflow-visible p-10 lg:p-0">
                 <div class="lg:flex gap-10 justify-center items-center">
                     <div className="flex-1">
