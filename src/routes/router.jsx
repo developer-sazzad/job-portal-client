@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             {
                 path: '/jobs/:id',
                 element: <PrivateRouters><JobsDetailsSingle></JobsDetailsSingle></PrivateRouters>,
-                loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
+                loader: ({ params }) => fetch(`https://job-portal-server-sigma-sand.vercel.app/jobs/${params.id}`)
 
             },
 
