@@ -40,7 +40,7 @@ const Header = () => {
     }, []);
     return (
         <section
-            className={`fixed top-0 w-full z-50  px-8 transition-all duration-500 ${scrolling ? "bg-blue-600 shadow-md" : "text-black py-8"
+            className={`fixed top-0 w-full z-50  px-8 transition-all duration-500 ${scrolling ? "bg-blue-600 text-white shadow-md" : "text-black py-8"
                 }`}>
             <div className="container w-full navbar py-3 mx-auto ">
                 <div className="navbar-start">

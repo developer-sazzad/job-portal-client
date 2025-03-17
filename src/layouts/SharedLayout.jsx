@@ -5,13 +5,13 @@ import Footer from "../pages/shared/Footer";
 const SharedLayout = () => {
     return (
         <div>
-            <header className="bg-primary text-white">
+            <header className="">
                 <Header></Header>
             </header>
-            <section className="container mx-auto my-32 bg-amber-300 p-5 md:p-0">
+            <section className="container mx-auto my-40 p-5 md:p-0">
                 <Outlet></Outlet>
             </section>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     );
 };
