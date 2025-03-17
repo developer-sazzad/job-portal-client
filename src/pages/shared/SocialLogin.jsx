@@ -3,7 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import AuthContext from "../../providers/AuthContext";
 
 const SocialLogin = () => {
-    const {setUser,loginWithGoogle} = useContext(AuthContext);
+    const {setUser, loginWithGoogle} = useContext(AuthContext);
 
     const handleGoogleLogin = () => {
         loginWithGoogle()

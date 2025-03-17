@@ -3,10 +3,18 @@ import registerLeftImg from '../../assets/chat-left.png'
 import SocialLogin from '../shared/SocialLogin';
 import AuthContext from '../../providers/AuthContext';
 import Swal from 'sweetalert2';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
     const [error, setError] = useState("");
     const { loginUser } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log(location)
+
+    const from = location.state || '/';
+
+
+
     const handleLogin = event => {
         event.preventDefault();
 
@@ -36,6 +44,7 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 console.log(result.user)
+                navigate(from)
                 Swal.fire({
                     title: "Login Success!",
                     icon: "success"

@@ -6,6 +6,8 @@ import SharedLayout from "../layouts/SharedLayout";
 import Login from "../pages/Authentication/Login";
 import AuthenticationLayout from "../layouts/AuthenticationLayout";
 import JobsDetailsSingle from "../pages/Home/JobsDetailsSingle";
+import PrivateRouters from "./PrivateRouters";
+
 
 const router = createBrowserRouter([
     {
@@ -36,7 +38,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/jobs/:id',
-                element: <JobsDetailsSingle></JobsDetailsSingle>,
+                element: <PrivateRouters><JobsDetailsSingle></JobsDetailsSingle></PrivateRouters>,
                 loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
 
             },
