@@ -7,6 +7,7 @@ import Login from "../pages/Authentication/Login";
 import AuthenticationLayout from "../layouts/AuthenticationLayout";
 import JobsDetailsSingle from "../pages/Home/JobsDetailsSingle";
 import PrivateRouters from "./PrivateRouters";
+import JobApply from "../pages/JobApply/JobApply";
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,15 @@ const router = createBrowserRouter([
                 element: <AuthenticationLayout></AuthenticationLayout>
             },
             {
+                path: '/jobs/:id',
+                element: <PrivateRouters><JobsDetailsSingle></JobsDetailsSingle></PrivateRouters>,
+                loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
+            },
+            {
+                path: '/jobApply/:id',
+                element: <PrivateRouters><JobApply></JobApply></PrivateRouters>
+            },
+            {
                 path: 'auth/register',
                 element: <Register></Register>
             },
@@ -36,13 +46,6 @@ const router = createBrowserRouter([
                 path: 'auth/login',
                 element: <Login></Login>
             },
-            {
-                path: '/jobs/:id',
-                element: <PrivateRouters><JobsDetailsSingle></JobsDetailsSingle></PrivateRouters>,
-                loader: ({ params }) => fetch(`https://job-portal-server-sigma-sand.vercel.app/jobs/${params.id}`)
-
-            },
-
         ]
     }
 ])

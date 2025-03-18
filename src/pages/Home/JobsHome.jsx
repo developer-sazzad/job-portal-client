@@ -5,11 +5,11 @@ const JobsHome = () => {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        fetch('https://job-portal-server-sigma-sand.vercel.app/jobs')
+        fetch('http://localhost:5000/jobs')
             .then(res => res.json())
             .then(data => {
                 setJobs(data);
-                // console.log(data)
+                console.log(data)
             })
     }, [])
     return (

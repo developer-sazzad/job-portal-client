@@ -1,9 +1,9 @@
 import { Link, useLoaderData } from "react-router-dom";
 import themnail from '../../assets/thumb.png'
 const JobsDetailsSingle = () => {
-    const { title, jobType, company, category, salaryRange, applicationDeadline, location, requirements, responsibilities, hr_email, hr_name } = useLoaderData()
+    const {_id, title, jobType, company, category, salaryRange, applicationDeadline, location, requirements, responsibilities, hr_email, hr_name } = useLoaderData()
 
-    return (
+     return (
         <div className="">
             <div className="space-y-5">
                 <img className="w-full rounded-2xl" src={themnail} alt="" />
@@ -70,7 +70,9 @@ const JobsDetailsSingle = () => {
                             <p>Email : {hr_email}</p>
                         </div>
                     </div>
-                    <Link to='/auth/login' className="btn btn-lg btn-primary hover:btn-soft">Apply Now</Link>
+                    <Link to={`/jobApply/${_id}`}>
+                        <button className="btn btn-lg btn-primary hover:btn-soft">Apply Now</button>
+                    </Link>
                 </div>
                 <aside className="flex-3/12 bg-amber-300">
                     Sidebar
