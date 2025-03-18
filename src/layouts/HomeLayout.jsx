@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../pages/shared/Footer";
 
 const HomeLayout = () => {
+
     return (
         <div>
             {/* <Header></Header> */}

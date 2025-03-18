@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react";
 import JobsCard from "./JobsCard";
+import Loading from "../shared/Loading";
 
 const JobsHome = () => {
     const [jobs, setJobs] = useState([]);
+    const [loading, setLoading] = useState(true)
+
 
     useEffect(() => {
         fetch('http://localhost:5000/jobs')
             .then(res => res.json())
             .then(data => {
                 setJobs(data);
-                console.log(data)
+                setLoading(false);
             })
-    }, [])
+    }, []);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <div className="container mx-auto p-5 md:p-0">
             <div className="text-center p-5 space-y-3 mb-10">

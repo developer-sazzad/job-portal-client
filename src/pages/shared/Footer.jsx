@@ -1,9 +1,9 @@
-import Loading from "./Loading";
+// import Loading from "./Loading";
 
 const Footer = () => {
     return (
         <div>
-            <Loading></Loading>
+            {/* <Loading></Loading> */}
         </div>
     );
 };

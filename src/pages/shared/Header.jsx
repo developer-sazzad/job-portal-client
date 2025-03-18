@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/icons/logo-small.png'
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../providers/AuthContext';
@@ -23,7 +23,7 @@ const Header = () => {
     }
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/my-applications'>My Application</NavLink></li>
     </>
 
     useEffect(() => {
@@ -86,6 +86,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li><a>Settings</a></li>
+                                <li><Link to='/my-applications'>My Applications</Link></li>
                                 <li onClick={handleLogout}><a>Logout</a></li>
                             </ul>
                         </div> : <NavLink to='auth/login' className='btn btn-soft btn-primary btn-lg text-xl'>Sign In</NavLink>
